@@ -1,0 +1,46 @@
+<nav>
+  <a href="/">Home</a> 
+  {{#if loggedIn}}
+    <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/login">Login</a>
+  {{/if}}
+</nav>
+
+<h2>Welcome to your dashboard {{name}}!</h2>
+
+<div class="blog-card">
+  <form class="form blog-form">
+    <div class="form-group">
+      <label for="blog-title">Blog Title:</label>
+      <input class="form-input" type="text" id="blog-title" />
+    </div>
+    <div class="form-group">
+      <label for="blog-content">Blog Content:</label>
+      <input class="form-input" type="text" id="blog-content" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Post Blog</button>
+    </div>
+  </form>
+</div>
+
+</div>
+  {{#each blogs as |blog|}}
+    <a href = "/api/blog/{{blog.id}}">
+      <p>{{blog.blog_title}}</p>
+    </a>
+    <p>{{blog.post_date}}</p>
+    <p>{{blog.user.name}}</p>
+    <p>{{blog.content}}
+    <div class="button-group">
+      <button class="btn btn-primary edit-blog-btn" id="edit-blog-btn" data-id="{{blog.id}}">Edit Blog</button>
+    </div>
+    <div class="button-group">
+      <button class="btn btn-primary delete-blog-btn" id="delete-blog-btn" data-id="{{blog.id}}">Delete Blog</button>
+  </div>
+  {{/each}}
+</div>
+
+<script src="../../js/dashboard.js"></script>
+
