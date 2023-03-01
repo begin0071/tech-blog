@@ -1,0 +1,44 @@
+<nav>
+  <a href="/">Home</a>
+  {{#if loggedIn}}
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+  {{else}}
+    <a href="/login">Login</a>
+  {{/if}}
+</nav>
+
+<body>
+  <div>
+    <p>{{blogs.blog_title}}</p>
+    <p>Posted {{blogs.post_date}}</p>
+    <p>{{blogs.description}}</p>
+    
+    <form class = form-comment>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <input class="comment-input" type="text" id="comment-text"/>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" id="comment-btn" blog-id="{{blogs.id}}" user-id="{{user_id}}" name-id="{{req.session.name}}">Add Comment</button>
+      </div>
+    </form>
+
+    {{#each commentUser as |comment|}}
+      <p>{{comment.content}}</p>
+      <p>{{comment.post_date}}</p>
+      <p>{{comment.name}}</p>
+      {{#if comment.authoredByUser }}
+        <div class="form-group">
+          <button class="btn btn-primary edit-comment-btn" type="submit" id="edit-comment-btn" blog-id="{{comment.blog_id}}" comment-id="{{comment.id}}" name-id="{{comment.name}}">Edit Comment</button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary delete-comment-btn" type="submit" id="delete-comment-btn" blog-id="{{comment.blog_id}}" comment-id="{{comment.id}}" name-id="{{comment.name}}">Delete Comment</button>
+        </div>
+      {{/if}}
+    {{/each}}
+  </div>
+</body>
+
+<script src="/js/comment.js"></script>
+
