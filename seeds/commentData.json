@@ -1,32 +1,32 @@
 [
     {
-      "name": "Sal",
+      "name": "Khaki",
       "content":
-        "Great!.",
+        "Nice work, I'm a full stack developer, and I'm passionate about learning new things and",
       "post_date": "June 21, 2021 17:00:00",
       "blog_id": 1,
       "user_id": 1
     },
     {
-      "name": "Sal",
+      "name": "Eric",
       "content":
-        "I would write that.",
+        "El camino is a great place to explore. It's a great place to explore.",
       "post_date": "September 22, 2021 22:00:00",
       "blog_id": 2,
       "user_id": 1
     },
     {
-      "name": "Lernantino",
+      "name": "Mutt",
       "content":
-        "Some people just want to watch Netflix.",
+        "Some people just Lazy",
       "post_date": "December 21, 2021 20:30:00",
       "blog_id": 1,
       "user_id": 2
     },
     {
-      "name": "Amiko",
+      "name": "Jasper",
       "content":
-        "I eat batteries for breakfast",
+        "Space is exploding. It's a great place to explore.",
       "post_date": "March 19, 2021 19:00:00",
       "blog_id": 3,
       "user_id": 3
