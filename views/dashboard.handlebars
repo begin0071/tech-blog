@@ -12,15 +12,15 @@
 <div class="blog-card">
   <form class="form blog-form">
     <div class="form-group">
-      <label for="blog-title">Blog Title:</label>
+      <label for="blog-title">Blog Name:</label>
       <input class="form-input" type="text" id="blog-title" />
     </div>
     <div class="form-group">
-      <label for="blog-content">Blog Content:</label>
+      <label for="blog-content">Description:</label>
       <input class="form-input" type="text" id="blog-content" />
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit">Post Blog</button>
+      <button class="btn btn-primary" type="submit">Post</button>
     </div>
   </form>
 </div>
@@ -34,10 +34,10 @@
     <p>{{blog.user.name}}</p>
     <p>{{blog.content}}
     <div class="button-group">
-      <button class="btn btn-primary edit-blog-btn" id="edit-blog-btn" data-id="{{blog.id}}">Edit Blog</button>
+      <button class="btn btn-primary edit-blog-btn" id="edit-blog-btn" data-id="{{blog.id}}">Edit</button>
     </div>
     <div class="button-group">
-      <button class="btn btn-primary delete-blog-btn" id="delete-blog-btn" data-id="{{blog.id}}">Delete Blog</button>
+      <button class="btn btn-primary delete-blog-btn" id="delete-blog-btn" data-id="{{blog.id}}">Delete this Blog</button>
   </div>
   {{/each}}
 </div>

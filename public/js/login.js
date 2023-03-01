@@ -1,3 +1,4 @@
+// This function handles thelogin form
 const handleLoginFormSubmit = async (event) => {
   event.preventDefault();
 
@@ -19,6 +20,7 @@ const handleLoginFormSubmit = async (event) => {
   }
 };
 
+// This function handles the signup form
 const handleSignupFormSubmit = async (event) => {
   event.preventDefault();
 
@@ -42,6 +44,10 @@ const handleSignupFormSubmit = async (event) => {
     }
   }
 };
+
+
+
+
 
 document
   .querySelector(".login-form")

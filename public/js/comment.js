@@ -1,7 +1,8 @@
+// Function to add a new comment to a blog post
 const addComment = async (evt) => {
   evt.preventDefault();
-  console.log(evt.target);
-  console.log(evt.target.getAttribute("blog-id"));
+  console.log(evt.target); // log the target element
+  console.log(evt.target.getAttribute("blog-id")); // log the "blog-id" attribute of the target element
   const commentText = document.querySelector("#comment-text").value.trim();
 
   if (commentText) {
@@ -10,6 +11,7 @@ const addComment = async (evt) => {
         "blog-id"
       )}`
     );
+    // Sends POST request to the server 
     const response = await fetch(
       `/api/blog/${evt.target.getAttribute("blog-id")}`,
       {
@@ -23,6 +25,7 @@ const addComment = async (evt) => {
         headers: { "Content-Type": "application/json" },
       }
     );
+    // If the response is OKredirect to the blog post page else show an alert message
     if (response.ok) {
       document.location.replace(
         `/api/blog/${evt.target.getAttribute("blog-id")}`
@@ -33,8 +36,10 @@ const addComment = async (evt) => {
   }
 };
 
+// Function to update an existing comment on a blog post
 const modifyComment = async (evt) => {
   const commentText = document.querySelector("#comment-text").value.trim();
+  // Sending put request
   const response = await fetch(
     `/api/blog/${evt.target.getAttribute("blog-id")}`,
     {
@@ -46,12 +51,15 @@ const modifyComment = async (evt) => {
       headers: { "Content-Type": "application/json" },
     }
   );
+  
   document.location.replace(
     `/api/blog/${evt.target.getAttribute("blog-id")}`
   );
 };
 
+
 const removeComment = async (evt) => {
+  // Sending a delete request
   const response = await fetch(
     `/api/blog/${evt.target.getAttribute("blog-id")}`,
     {
@@ -62,14 +70,17 @@ const removeComment = async (evt) => {
       headers: { "Content-Type": "application/json" },
     }
   );
+
   document.location.replace(
     `/api/blog/${evt.target.getAttribute("blog-id")}`
   );
 };
 
+// Added event listeners to the edit and "Delete buttons for each comment 
 document.querySelectorAll(".edit-comment-btn").forEach((editCmt) => {
   editCmt.addEventListener("click", modifyComment);
 });
+
 
 document.querySelector("#comment-btn").addEventListener("click", addComment);
 
